@@ -4,18 +4,21 @@ namespace FormsApp.Models
 {
     public class Product
     {
-        [Display(Name ="Urun Id")]
+        [Display(Name = "Urun Id")]
         public int ProductId { get; set; }
 
-          [Display(Name ="Urun Adı")]
+        [Required]
+        [Display(Name = "Urun Adı")]
         public string Name { get; set; } = string.Empty;
 
-          [Display(Name ="Fiyat")]
+        [Display(Name = "Fiyat")]
         public decimal Price { get; set; }
 
-          [Display(Name ="Resim")]
+        [Display(Name = "Resim")]
         public string Image { get; set; } = string.Empty;
         public bool IsActive { get; set; }  // urun satısta mı
+
+        [Display(Name = "Kategori")]
         public int CategoryId { get; set; }
     }
 }
