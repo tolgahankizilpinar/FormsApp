@@ -52,5 +52,26 @@ namespace FormsApp.Models
                 entity.IsActive = updatedProduct.IsActive;
             }
         }
+
+        public static void EditIsActiveAndPrice(Product updatedProduct)
+        {
+            var entity = _products.FirstOrDefault(p => p.ProductId == updatedProduct.ProductId);
+
+            if (entity != null)
+            {
+                entity.IsActive = updatedProduct.IsActive;
+                entity.Price = updatedProduct.Price;
+            }
+        }
+
+        public static void DeleteProduct(Product? entity)
+        {
+            var product = _products.FirstOrDefault(p => p.ProductId == entity?.ProductId);
+
+            if (product != null)
+            {
+                _products.Remove(product);
+            }
+        }
     }
 }
